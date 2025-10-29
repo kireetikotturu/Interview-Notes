@@ -60,9 +60,10 @@ It’s designed for developers who want to transition smoothly into **Next.js** 
 #### 🚀 Deployment & Optimization
 30. [How do you deploy a Next.js application?](#q30-how-do-you-deploy-a-nextjs-application) *(Document1)*
 31. [What is Serverless Deployment in Next.js?](#q31-what-is-serverless-deployment-in-nextjs) *(Document1)*
-32. [How can you optimize performance in Next.js?](#q32-how-can-you-optimize-performance-in-nextjs) *(Document1)*
+
 
 #### 🧠 Advanced Concepts
+32. [How can you optimize performance in Next.js?](#q32-how-can-you-optimize-performance-in-nextjs) *(Document1)*
 33. [What is Middleware in Next.js?](#q33-what-is-middleware-in-nextjs) *(Document2)*
 34. [What is App Router vs Pages Router?](#q34-what-is-app-router-vs-pages-router) *(Document2)*
 35. [What are Layouts and Templates in App Router?](#q35-what-are-layouts-and-templates-in-app-router) *(Document1)*
@@ -596,6 +597,945 @@ This helps reduce page load time and gives a better user experience, especially 
 
 ---
 
+---
+
+## 🎨 Styling & Components
+
+### Q21: What is Styled JSX in Next.js?
+Styled JSX is a built-in styling feature in Next.js that lets you write CSS directly inside a component, and the styles are automatically scoped only to that component.
+
+🌟 Key Points:
+✅ Comes built-in with Next.js (no need to install anything)
+🎯 Styles are scoped — they apply only to the component they are written in
+💡 You can also write dynamic styles using JavaScript
+🌍 You can use <style jsx global> for global styles
+
+---
+
+### Q22: How do you use CSS Modules or Tailwind in Next.js?
+.
+🧩 1. Using CSS Modules & Global CSS in Next.js
+
+In Next.js, you can style your app in two ways using CSS:
+Global CSS — applies to the entire app
+CSS Modules — applies only to a specific component (scoped styling)
+
+🌍 A. Global CSS (App-Level Styling)
+
+Global CSS affects the whole application.
+You import it once inside the special file _app.js.
+
+Example : 
+
+```
+/* styles/globals.css */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+h1 {
+  color: #0070f3;
+}
+
+```
+✅ All pages and components will use these styles automatically.
+
+
+.
+
+🎨 B. CSS Modules (Component-Level Styling)
+
+CSS Modules are used for scoped styles — styles that only affect one component.
+
+Example:
+
+```
+/* Button.module.css */
+.btn {
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+// Button.js
+import styles from './Button.module.css';
+
+export default function Button() {
+  return <button className={styles.btn}>Click Me</button>;
+}
+
+```
+✅ These styles apply only to the Button component and won’t affect others.
+
+
+🧠 In short:
+Use Global CSS (in _app.js) for shared styles across your app.
+Use CSS Modules for component-specific styles that won’t conflict.
+
+
+.
+
+🎨 2. Using Tailwind CSS
+
+Tailwind is a utility-first CSS framework.
+You can add it easily and use class names directly in JSX.
+
+Setup (once):
+
+1. Install Tailwind
+
+```
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+2. Add the paths in tailwind.config.js, and import Tailwind in globals.css:
+```
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+```
+
+Example : 
+```
+export default function Button() {
+  return (
+    <button className="bg-blue-500 text-white px-4 py-2 rounded">
+      Click Me
+    </button>
+  );
+}
+
+```
+
+
+.
+
+🧠 In short:
+
+Use CSS Modules for simple, component-level styling.
+Use Tailwind CSS for fast, responsive, and utility-based design.
+
+
+
+---
+
+### Q23: What is the Image Component and Image Optimization in Next.js?
+
+The Image Component (next/image) in Next.js is an improved version of the normal HTML <img> tag.
+It automatically optimizes images for faster loading and better performance.
+
+.
+
+🧩 Key Points (Simple Explanation):
+
+🖼️ Automatic Optimization:
+Next.js automatically resizes and serves the best image size based on the user’s device (mobile, tablet, desktop).
+
+⚡ Faster Page Load:
+Images load only when they appear on the screen (lazy loading), which makes pages load faster.
+
+🎯 Better Quality and Smaller Size:
+Images are served in modern formats (like WebP) to reduce size without losing quality.
+
+🔄 No Layout Shift:
+It prevents content from moving or “jumping” while images are loading — improving user experience.
+
+🌍 Works with Local or Remote Images:
+You can use images from your public folder or from external URLs.
+
+Example:
+
+```
+import Image from 'next/image';
+
+export default function Profile() {
+  return (
+    <Image
+      src="/profile.jpg"     // from public folder
+      alt="Profile picture"
+      width={200}
+      height={200}
+    />
+  );
+}
+
+```
+
+✅ This image will:
+
+Load only when visible
+Automatically resize
+Improve performance
+
+
+
+🧠 In short:
+next/image helps you load images faster, in better quality, and without layout shifts, all automatically handled by Next.js.
+
+
+
+
+## ⚙️ Configuration & Environment
+
+### Q25: What is next.config.js and what does it do?
+next.config.js is a configuration file in Next.js used to customize or modify the default behavior of your Next.js app.
+It lets you enable experimental features, set environment variables, handle image domains, redirects, and more.
+
+Example : 
+
+
+```
+// @ts-check
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  images: {
+    domains: ['example.com'], // Allow loading images from this domain
+  },
+  env: {
+    API_URL: 'https://api.example.com', // Custom environment variable
+  },
+};
+
+module.exports = nextConfig;
+
+```
+
+✅ In short:
+next.config.js helps you control how Next.js behaves — including builds, images, environment variables, and performance settings.
+
+---
+
+
+### Q26: What is the purpose of publicRuntimeConfig and serverRuntimeConfig?
+In Next.js, both publicRuntimeConfig and serverRuntimeConfig are used to store configuration values that you can access at runtime (when your app is running).
+They are defined inside next.config.js.
+
+⚙️ 1. serverRuntimeConfig
+
+Used for server-side only configuration.
+The values here are not exposed to the browser.
+Useful for things like API keys or database URLs that must remain private.
+
+Example : 
+
+```
+const nextConfig = {
+  serverRuntimeConfig: {
+    secretKey: 'my-secret-key', // only available on the server
+  },
+};
+
+```
+
+
+🌐 2. publicRuntimeConfig
+Used for client-side and server-side configuration.
+These values are exposed to the browser.
+Useful for things like API base URLs or public assets.
+
+```
+const nextConfig = {
+  publicRuntimeConfig: {
+    apiBaseUrl: 'https://api.example.com',
+  },
+};
+
+
+```
+
+
+🧠 How to Access Them
+You can access both using getConfig() from next/config:
+
+```
+import getConfig from 'next/config';
+const { publicRuntimeConfig, serverRuntimeConfig } = getConfig();
+
+console.log(publicRuntimeConfig.apiBaseUrl);
+console.log(serverRuntimeConfig.secretKey);
+
+```
+
+✅ In short:
+
+serverRuntimeConfig → for private values (server only).
+publicRuntimeConfig → for public values (accessible in browser).
+
+---
+
+### Q27: What are Environment Variables in Next.js?
+Environment variables in Next.js are used to store secret or configuration values (like API URLs or keys) outside of your code — so you can easily change them for different environments (development, production, etc.).
+
+Next.js has built-in support for handling them.
+
+⚙️ 1. Where to Store Environment Variables
+
+You store them in special files like:
+.env → used for all environments
+.env.development → used only during development (next dev)
+.env.production → used only in production (next start)
+.env.local → used for local overrides (takes highest priority)
+
+🧠 Note:
+.env.local always overrides values from the other .env files.
+
+.
+
+🌐 2. Making Variables Available to the Browser
+
+By default, environment variables are only available on the server side.
+If you want to use them in the browser, you must prefix them with: (NEXT_PUBLIC_)
+
+Example : 
+
+```
+# .env.local
+NEXT_PUBLIC_API_URL=https://api.example.com
+SECRET_KEY=mysecret
+
+```
+NEXT_PUBLIC_API_URL → accessible on client and server
+SECRET_KEY → accessible only on the server
+
+💻 3. Using Environment Variables in Code
+
+You can access them using process.env:
+```
+console.log(process.env.NEXT_PUBLIC_API_URL); // visible in browser
+console.log(process.env.SECRET_KEY);          // server only
+
+```
+
+✅ In short:
+Use .env files to store config values.
+Use NEXT_PUBLIC_ for values needed in the browser.
+.env.local overrides all others and is best for private local settings.
+
+
+
+---
+
+### Q28: How do you add custom headers in Next.js?
+You can add custom headers by defining them inside next.config.js using the headers() function.
+
+Example : 
+```
+// next.config.js
+const nextConfig = {
+  async headers() {
+    return [
+      {
+        source: '/about',
+        headers: [
+          { key: 'X-Custom-Header', value: 'MyHeaderValue' },
+        ],
+      },
+    ];
+  },
+};
+
+module.exports = nextConfig;
+
+```
+
+✅ Adds custom HTTP headers to specific routes for security or metadata purposes.
+
+
+## 🚀 Deployment & Optimization
+
+### Q30: How do you deploy a Next.js application?
+You can deploy Next.js in several ways depending on needs (SSR/SSG/static) — short summary with quick commands/examples:
+
+Vercel (recommended) — Native platform for Next.js with zero-config SSR, SSG, API routes, and automatic optimizations.
+Just connect repo or run: vercel (after installing Vercel CLI).
+
+Static export (SSG) — Generate pure static HTML for static hosts.
+```
+next build
+next export
+
+```
+Host output (out/) on Netlify, GitHub Pages, etc.```
+
+Custom Node.js server — Use when you need a custom server or full SSR on your own VM.
+```
+next build
+NODE_ENV=production node server.js   # or: next start
+
+```
+Docker / Containers — Containerize for Kubernetes, ECS, DigitalOcean Apps, etc.
+Typical Dockerfile uses next build + next start.
+
+Platform examples — Netlify or Cloudflare Pages (static), AWS/Google/Azure (server or container), Heroku (custom server).
+Production essentials:
+Set environment variables for production (API keys, DB URLs).
+Use a CDN for static assets and caching.
+Configure domain, HTTPS, and any required headers/rewrites.
+
+In short: use Vercel for easiest/optimal Next.js hosting; choose static export, custom server, or containers when you need specific hosting or architecture.
+
+
+---
+
+### Q31: What is Serverless Deployment in Next.js?
+Serverless deployment means running your Next.js app without managing servers.
+Instead of keeping a server running all the time, your app runs as small, on-demand functions (called serverless functions) that execute only when needed.
+Platforms like Vercel, Netlify, or AWS Lambda handle this automatically.
+
+⚙️ How It Works
+
+Static Pages (SSG / ISR):
+Pre-rendered during build time and served directly from a CDN.
+
+Dynamic Pages (SSR):
+Rendered using serverless functions — they run only when a user requests the page.
+
+API Routes:
+Each API file becomes its own serverless function, running independently when called.
+
+🚀 Advantages
+
+⚡ Auto-Scaling:
+Automatically handles high traffic without extra setup.
+💰 Cost-Efficient:
+You pay only when functions run, not for idle time.
+🧰 No Server Management:
+No need to manage or update servers — handled by the platform.
+🌍 Global Performance:
+Functions are deployed close to users worldwide, making responses faster.
+
+✅ In short:
+Serverless deployment lets Next.js apps run as auto-scaling, pay-per-use functions, giving better performance, lower cost, and zero server maintenance.
+
+
+
+## 🧠 Advanced Concepts
+
+---
+
+### Q32: How can you optimize performance in Next.js?
+Optimizing the performance of a Next.js application involves various strategies such as:
+
+1. Code Splitting & Dynamic Imports : Load only the code needed for the current page.
+2. Lazy Loading Components & Images : Load components or images only when they appear on screen (reduces initial load time).
+3. Use the Next.js <Image> Component : Automatically optimizes image size and format for different devices.
+4. Server-Side Caching (for SSR/SSG) : Cache rendered pages or API responses to avoid recomputation.
+5. CDN Caching for Static Assets : Store static files (images, JS, CSS) on a CDN for faster global delivery.
+6. Analyze Performance : Use tools like Lighthouse, WebPageTest, or Next.js Analytics to track load time and performance issues.
+
+
+---
+
+### Q33: What is Middleware in Next.js?
+Middleware in Next.js lets you run code before a request is processed.
+It allows you to redirect, rewrite, or check authentication before serving a page — giving you more control over how requests are handled.
+
+💻 Example: Redirect Unauthenticated Users
+```
+// middleware.js
+import { NextResponse } from 'next/server';
+
+export function middleware(request) {
+  const isLoggedIn = request.cookies.get('token'); // check auth cookie
+
+  if (!isLoggedIn) {
+    // redirect to login page if not logged in
+    return NextResponse.redirect(new URL('/login', request.url));
+  }
+
+  // continue to requested page
+  return NextResponse.next();
+}
+
+// Apply only to protected routes
+export const config = {
+  matcher: ['/dashboard/:path*'],
+};
+
+```
+
+✅ Explanation:
+
+The middleware checks if a user has a token cookie.
+If not, they’re redirected to /login.
+It runs before the page loads — ensuring secure and fast route control.
+
+
+---
+
+
+
+### Q34: What is App Router vs Pages Router?
+Next.js has two types of routing systems — the Pages Router (older) and the App Router (newer).
+Both handle navigation and page rendering, but the App Router is the modern approach introduced in Next.js 13.
+
+🧩 1. Pages Router (Older System)
+
+Definition:
+The Pages Router is the traditional file-based routing system in Next.js that uses the pages/ directory.
+Each file inside pages/ automatically becomes a route.
+
+Key Points:
+Uses the pages/ folder.
+Supports SSR, SSG, and API Routes.
+Uses getStaticProps, getServerSideProps, and getInitialProps for data fetching.
+Simple and familiar, but less flexible for complex layouts.
+
+Example : 
+```
+pages/
+ ├── index.js       →  '/'
+ ├── about.js       →  '/about'
+ └── api/user.js    →  '/api/user'
+
+```
+
+⚡ 2. App Router (New System)
+
+Definition:
+The App Router is the new routing system introduced in Next.js 13, using the app/ directory.
+It’s built on React Server Components and provides more control and performance benefits.
+
+Key Points:
+Uses the app/ folder instead of pages/.
+Supports Server Components, Layouts, Templates, and Streaming.
+Enables nested layouts, loading states, and error handling per route.
+More powerful for large and modern apps.
+
+Example : 
+```
+app/
+ ├── layout.js      →  shared layout
+ ├── page.js        →  homepage
+ ├── about/
+ │    └── page.js   →  '/about'
+ └── dashboard/
+      ├── page.js
+      └── loading.js
+
+```
+
+
+| Feature       | **Pages Router**                   | **App Router**                 |
+| ------------- | ---------------------------------- | ------------------------------ |
+| Folder        | `pages/`                           | `app/`                         |
+| Type          | Traditional                        | Modern (Next.js 13+)           |
+| Components    | Client only                        | Server + Client                |
+| Layouts       | Basic (via _app.js)                | Nested, built-in               |
+| Data Fetching | getStaticProps, getServerSideProps | `fetch()` in Server Components |
+| Best For      | Small/simple apps                  | Modern/scalable apps           |
+
+
+---
+
+### Q35: What are Layouts and Templates in App Router?
+In the Next.js App Router, both Layouts and Templates help you structure your pages but they behave differently when navigating between routes.
+
+🧩 Layouts
+
+Definition:
+A Layout is a shared UI structure that persists across multiple pages or nested routes.
+
+Key Points:
+Used for common elements like headers, sidebars, or navigation bars.
+State and DOM are preserved when moving between child routes.
+Ideal for content that should not reload on navigation.
+
+Example:
+A dashboard layout with a sidebar and navbar that stays the same while switching between pages.
+
+🧱 Templates
+
+Definition:
+A Template is similar to a layout but does not preserve state or DOM between navigations.
+
+Key Points:
+Re-renders completely on each page visit.
+Useful for pages that should reset state or animations when changing routes.
+Creates a new instance of components every time it’s rendered.
+
+| Feature                     | **Layout**                   | **Template**               |
+| --------------------------- | ---------------------------- | -------------------------- |
+| **Purpose**                 | Shared UI wrapper            | Fresh page structure       |
+| **State Persistence**       | ✅ Preserves state            | ❌ Does not preserve state  |
+| **Re-render on Navigation** | No                           | Yes                        |
+| **Use Case**                | Headers, navbars, dashboards | Forms, wizards, animations |
+
+
+✅ Summary:
+Use Layouts when you want UI and state to persist across routes,
+and Templates when you want the page to re-render fresh every time it loads.
+
+---
+
+### Q36: What is the use of the _app.js and _document.js files?
+These two files, _app.js and _document.js, are special files in Next.js that control how your app is initialized and rendered.
+
+🧩 _app.js — Custom App Component
+Purpose:
+
+It’s used to initialize pages and share common layout, styles, or logic across your entire Next.js app.
+Every time a user navigates to a page (/home, /about, etc.), Next.js loads _app.js first — it wraps every page in your app.
+
+Typical Uses:
+✅ Add global CSS
+✅ Wrap all pages with a layout
+✅ Provide context providers (like Redux, Theme, Auth, etc.)
+✅ Control page transitions or loading states
+
+Example : 
+```
+// pages/_app.js
+import '../styles/globals.css';  // global CSS
+import Layout from '../components/Layout';
+
+export default function MyApp({ Component, pageProps }) {
+  return (
+    <Layout>
+      <Component {...pageProps} />   {/* this renders the page */}
+    </Layout>
+  );
+}
+
+```
+Here:
+Component → the active page being rendered.
+pageProps → props passed to that page.
+You can wrap all pages with a common Layout.
+
+
+🧱 _document.js — Custom HTML Document
+Purpose:
+Used to customize the entire HTML document that Next.js sends to the browser.
+Unlike _app.js, this file only runs on the server and is used for things that affect the HTML structure — not React components.
+
+Typical Uses:
+✅ Modify the <html> or <body> tags
+✅ Add custom <meta>, <link>, or <script> tags
+✅ Set up fonts, analytics, or favicons at document level
+✅ Add language attributes or accessibility settings
+
+Example:
+```
+// pages/_document.js
+import { Html, Head, Main, NextScript } from 'next/document';
+
+export default function MyDocument() {
+  return (
+    <Html lang="en">
+      <Head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter&display=swap" />
+      </Head>
+      <body>
+        <Main />          {/* your app's content */}
+        <NextScript />    {/* Next.js scripts */}
+      </body>
+    </Html>
+  );
+}
+
+```
+
+🧠 Summary Table
+| File           | Runs On         | Purpose                              | Common Use                                  |
+| -------------- | --------------- | ------------------------------------ | ------------------------------------------- |
+| `_app.js`      | Client + Server | Controls how pages are rendered      | Global styles, layout, state providers      |
+| `_document.js` | Server only     | Controls the HTML document structure | Custom `<html>`, `<head>`, fonts, meta tags |
+
+
+---
+
+### Q37: How do you implement authentication in Next.js?
+Next.js doesn’t include built-in auth. Common approaches:
+
+1. JWT (custom)
+Stateless tokens issued by your backend.
+Good for APIs and microservices.
+You must handle login, token signing, refresh tokens, storage and verification.
+Use httpOnly cookies (recommended) or Authorization headers.
+
+2. NextAuth.js
+Full-featured auth library for Next.js (providers, sessions, secure cookies).
+Fast to set up and flexible via callbacks/adapters.
+Great default choice for most apps needing social login or session management.
+
+3. Firebase Authentication
+Managed auth service (email/password, phone, social).
+Easy client-side integration; pairs well with Firestore/Realtime DB.
+Best when using Firebase backend or serverless architecture.
+
+Quick pros & cons
+JWT — +Control, +stateless; −More boilerplate, must implement refresh/rotation.
+NextAuth — +Fast, +secure defaults; −Opinionated, can need custom callbacks.
+Firebase Auth — +Managed, +easy; −Vendor lock-in, extra work for SSR.
+
+Best practices (brief)
+Prefer httpOnly, secure, sameSite cookies for session tokens.
+Keep access tokens short-lived and use refresh tokens.
+Protect SSR pages via server-side session/token checks.
+Avoid storing tokens in localStorage if you can.
+Use HTTPS and CSRF protections for cookie-based auth.
+
+---
+
+### Q38: What are React Server Components (RSC) in Next.js?
+React Server Components (RSC) are a new React feature that allow components to be rendered on the server instead of the client.
+In Next.js (App Router), all components are Server Components by default.
+
+⚙️ Server Components (default)
+Render on the server — ideal for fetching data, accessing databases, or heavy computations.
+Example : 
+```
+// app/page.js — Server Component
+async function ServerComponent() {
+  const data = await fetch("https://api.example.com/data");
+  const result = await data.json();
+
+  return (
+    <div>
+      <h1>Server Rendered Data</h1>
+      <p>{result.message}</p>
+    </div>
+  );
+}
+
+export default ServerComponent;
+
+```
+
+✅ Key points:
+Can fetch data directly from the server.
+Not included in the client JavaScript bundle.
+Great for performance and SEO.
+
+
+
+⚡ Client Components (opt-in)
+Client Components are used for interactive features (like buttons, forms, and local state).
+They must start with the "use client" directive.
+Example : 
+```
+// app/components/ClientComponent.js
+"use client";
+
+import { useState } from "react";
+
+export default function ClientComponent() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <button onClick={() => setCount(count + 1)}>Count: {count}</button>
+  );
+}
+```
+✅ Use Client Components when you need:
+Interactivity (clicks, forms, state)
+React hooks (useState, useEffect)
+Browser-only APIs (localStorage, window, document)
+
+🚀 Benefits of Server Components
+Direct access to server resources (database, filesystem)
+Zero client-side JavaScript for non-interactive components
+Faster performance and smaller bundles
+Better SEO
+Automatic code splitting
+
+In short:
+🧠 Use Server Components for data fetching and non-interactive UI.
+⚡ Use Client Components only when you need interactivity or browser APIs.
+
+---
+
+## 🧩 Error Handling & Debugging
+
+### Q39: What are _error.js and 404.js used for?
+Next.js provides special pages for handling errors and missing routes in your app.
+
+.
+
+🧩 pages/_error.js
+Purpose:
+Handles runtime errors (server-side or client-side) and non-404 errors (like 500 Internal Server Error).
+When an unexpected error occurs while rendering a page, Next.js displays this component.
+Example : 
+```
+// pages/_error.js
+function Error({ statusCode }) {
+  return (
+    <p>
+      {statusCode
+        ? `An error ${statusCode} occurred on the server`
+        : "An error occurred on the client"}
+    </p>
+  );
+}
+
+Error.getInitialProps = ({ res, err }) => {
+  const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
+  return { statusCode };
+};
+
+export default Error;
+
+```
+✅ Used for:
+500 Internal Server Error
+Unexpected exceptions
+Any custom server error handling
+
+
+
+🚫 pages/404.js
+Purpose:
+Displayed when a user visits a non-existent route (404 Not Found).
+Example : 
+```
+// pages/404.js
+export default function Custom404() {
+  return (
+    <div style={{ textAlign: "center", padding: "50px" }}>
+      <h1>404 - Page Not Found</h1>
+      <p>Oops! The page you’re looking for doesn’t exist.</p>
+    </div>
+  );
+}
+
+```
+✅ Used for:
+Missing pages or invalid routes
+Custom 404 designs (illustrations, redirect links, etc.)
+
+
+---
+
+### Q40: How do you implement custom error boundaries?
+
+🧩 Custom Error Boundaries in Next.js
+Error boundaries help you gracefully handle runtime errors in React components — preventing the entire app from crashing and showing a user-friendly fallback instead.
+
+1️⃣ Create a Custom Error Boundary Component
+Create a class component that extends React.Component.
+Use getDerivedStateFromError() and componentDidCatch() lifecycle methods to capture and handle errors.
+
+Example : 
+```
+// components/ErrorBoundary.js
+import React from "react";
+
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(error) {
+    // Update state so the next render shows the fallback UI
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    // Optionally log the error to an external service
+    console.error("Error caught by boundary:", error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return <h1>Something went wrong.</h1>;
+    }
+
+    return this.props.children;
+  }
+}
+
+export default ErrorBoundary;
+
+```
+
+2️⃣ Wrap Components with the Error Boundary
+Use the <ErrorBoundary> component to wrap any part of your app that might throw an error.
+
+Example : 
+```
+// Example usage
+import ErrorBoundary from "../components/ErrorBoundary";
+import MyComponent from "../components/MyComponent";
+
+export default function App() {
+  return (
+    <ErrorBoundary>
+      <MyComponent />
+    </ErrorBoundary>
+  );
+}
+
+```
+
+
+🧠 Key Points
+Error Handling:
+Error boundaries catch both JavaScript and React rendering errors, preventing full app crashes.
+
+Error Propagation:
+If an error occurs inside a component, it’s caught by the nearest error boundary.
+Nested error boundaries create a hierarchy — only the affected part re-renders.
+
+Logging & Monitoring:
+Use componentDidCatch to log errors to an external service like Sentry or LogRocket.
+
+
+
+⚙️ Notes for Next.js (App Router)
+
+In the Next.js App Router (app/ directory), you can also use route-level error handling:
+Create an error.js file inside any route folder (app/dashboard/error.js).
+Next.js automatically treats it like an error boundary for that segment.
+
+Example : 
+```
+// app/dashboard/error.js
+"use client";
+
+export default function DashboardError({ error, reset }) {
+  return (
+    <div>
+      <h2>Something went wrong in Dashboard.</h2>
+      <button onClick={() => reset()}>Try again</button>
+    </div>
+  );
+}
+
+```
+
+In short:
+
+🧱 Use a React Error Boundary for component-level protection.
+🧩 Use Next.js error.js files for route-level error handling in the App Router.
+
+
+
+---
+
+### Q41: Best practices for debugging and testing Next.js apps
+Debugging and testing help keep your Next.js app reliable and bug-free. Here are some simple best practices:
+
+1. Use browser developer tools to inspect the UI, check network requests, and monitor performance.
+2. Add console logs or use a debugger to trace code execution and find issues quickly.
+3. Write unit tests using Jest and React Testing Library to test components and logic.
+4. Perform end-to-end (E2E) tests using tools like Cypress or Playwright to test full user flows.
+5. Use ESLint and TypeScript to catch coding errors early during development.
+6. Add your tests to CI/CD pipelines to automatically run checks before deployment.
+7. Keep tests simple, focused, and close to the code they cover for easier maintenance.
+
+---
+
+
 ## Part 2: Quick Reference Questions
 - [What is File-Based Routing?](#q5-file-based-routing-in-nextjs)
 - [What is getStaticPaths used for?](#q13-getstaticpaths)
@@ -613,9 +1553,4 @@ This helps reduce page load time and gives a better user experience, especially 
 - [How do you handle authentication in Next.js?](#q37-how-do-you-implement-authentication-in-nextjs)
 - [What is Incremental Static Regeneration (ISR)?](#q9-isr)
 
----
 
-📘 **Note:**  
-Questions **Q33 (Docker)** and **Q39 (JWT/NextAuth/Firebase)** were intentionally removed as per your request.
-
----
