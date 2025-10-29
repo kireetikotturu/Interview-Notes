@@ -99,7 +99,7 @@ API Routes: Allows backend functionality within the application. Each file insid
 Automatic Code Splitting: Loads only the necessary JavaScript for each page, improving performance.
 Optimized Builds: Bundling, minification, and image optimization happen out-of-the-box.
 Easy Deployment: Supports multiple deployment options like static site hosting and serverless functions, simplifying the release process.
-
+```
 Client Request
        │
        ▼
@@ -131,7 +131,7 @@ Generate HTML   │
           ▼
      Interactive Page
 
-
+```
 
 ---
 
