@@ -78,6 +78,27 @@ It’s designed for developers who want to transition smoothly into **Next.js** 
 
 ---
 
+
+---
+
+## Part 2: Quick Reference Questions
+- [What is File-Based Routing?](#q5-file-based-routing-in-nextjs)
+- [What is getStaticPaths used for?](#q13-getstaticpaths)
+- [What is ISR and why is it useful?](#q9-isr)
+- [How do you add meta tags using the Head component?](#q23-what-is-the-image-component-and-image-optimization-in-nextjs)
+- [What is the difference between Layouts and Templates?](#q35-what-are-layouts-and-templates-in-app-router)
+- [What are Redirects vs Rewrites?](#q19-what-are-redirects-and-rewrites-in-nextjs)
+- [What is Prefetching and how does it improve performance?](#q20-what-is-prefetching-in-nextjs)
+- [What is Serverless Architecture in Next.js?](#q31-what-is-serverless-deployment-in-nextjs)
+- [What are publicRuntimeConfig and serverRuntimeConfig?](#q26-what-is-the-purpose-of-publicruntimeconfig-and-serverruntimeconfig)
+- [What is the difference between App Router and Pages Router?](#q34-what-is-app-router-vs-pages-router)
+- [What is Middleware used for?](#q33-what-is-middleware-in-nextjs)
+- [What are React Server Components (RSC)?](#q38-what-are-react-server-components-rsc-in-nextjs)
+- [How do you handle authentication in Next.js?](#q37-how-do-you-implement-authentication-in-nextjs)
+- [What is Incremental Static Regeneration (ISR)?](#q9-isr)
+
+---
+
 ## Part 1: Read-Aloud Interview Questions
 
 ### Q1: What is Next.js?
@@ -1536,21 +1557,6 @@ Debugging and testing help keep your Next.js app reliable and bug-free. Here are
 ---
 
 
-## Part 2: Quick Reference Questions
-- [What is File-Based Routing?](#q5-file-based-routing-in-nextjs)
-- [What is getStaticPaths used for?](#q13-getstaticpaths)
-- [What is ISR and why is it useful?](#q9-isr)
-- [How do you add meta tags using the Head component?](#q23-what-is-the-image-component-and-image-optimization-in-nextjs)
-- [What is the difference between Layouts and Templates?](#q35-what-are-layouts-and-templates-in-app-router)
-- [What are Redirects vs Rewrites?](#q19-what-are-redirects-and-rewrites-in-nextjs)
-- [What is Prefetching and how does it improve performance?](#q20-what-is-prefetching-in-nextjs)
-- [What is Serverless Architecture in Next.js?](#q31-what-is-serverless-deployment-in-nextjs)
-- [What are publicRuntimeConfig and serverRuntimeConfig?](#q26-what-is-the-purpose-of-publicruntimeconfig-and-serverruntimeconfig)
-- [How does Next.js handle CORS?](#q26-security-and-cors)
-- [What is the difference between App Router and Pages Router?](#q34-what-is-app-router-vs-pages-router)
-- [What is Middleware used for?](#q33-what-is-middleware-in-nextjs)
-- [What are React Server Components (RSC)?](#q38-what-are-react-server-components-rsc-in-nextjs)
-- [How do you handle authentication in Next.js?](#q37-how-do-you-implement-authentication-in-nextjs)
-- [What is Incremental Static Regeneration (ISR)?](#q9-isr)
+
 
 
