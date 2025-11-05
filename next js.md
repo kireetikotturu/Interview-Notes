@@ -19,62 +19,59 @@ It’s designed for developers who want to transition smoothly into **Next.js** 
 ### Part 1: Read-Aloud Interview Questions
 
 #### 🧩 Next.js Fundamentals
-1. [What is Next.js?](#q1-what-is-nextjs) *(Document2)*
-2. [How does Next.js work?](#q2-how-nextjs-works) *(Document1)*
-3. [Key features of Next.js](#q3-key-features-of-nextjs) *(Document2)*
-4. [Next.js vs React.js](#q4-nextjs-vs-reactjs) *(Document1)*
-5. [What is File-Based Routing in Next.js?](#q5-file-based-routing-in-nextjs) *(Document2)*
-6. [What is the difference between client-side and server-side rendering?](#q6-client-vs-server-rendering) *(Document1)*
+1. [What is Next.js?](#q1-what-is-nextjs)  
+2. [How does Next.js work?](#q2-how-does-nextjs-work)    
+3. [Key features of Next.js](#q3-key-features-of-nextjs)  
+4. [Next.js vs React.js](#q4-nextjs-vs-reactjs)  
+5. [What is File-Based Routing in Next.js?](#q5-what-is-file-based-routing-in-nextjs)
+6. [What is the difference between Client-Side and Server-Side Rendering?](#q6-what-is-the-difference-between-client-side-and-server-side-rendering)   
 
 #### ⚙️ Rendering & Data Fetching
-7. [What is Server-Side Rendering (SSR)?](#q7-ssr) *(Document1)*
-8. [What is Static Site Generation (SSG)?](#q8-ssg) *(Document2)*
-9. [What is Incremental Static Regeneration (ISR)?](#q9-isr) *(Document2)*
-10. [Difference between SSR, SSG, and CSR](#q10-difference-between-rendering-types) *(Combined)*
-11. [What are getStaticProps and getServerSideProps?](#q11-getstaticprops-and-getserversideprops) *(Document1)*
-12. [When to use getStaticProps vs getServerSideProps](#q12-when-to-use-getstaticprops-vs-getserversideprops) *(Document1)*
-13. [What is getStaticPaths?](#q13-getstaticpaths) *(Document1)*
-14. [How to fetch data in Next.js?](#q14-how-to-fetch-data-in-nextjs) *(Document2)*
+7.  [What is Server-Side Rendering (SSR)?](#q7-what-is-server-side-rendering-ssr)
+8.  [What is Static Site Generation (SSG)?](#q8-what-is-static-site-generation-ssg)    
+9.  [What is Incremental Static Regeneration (ISR)?](#q9-what-is-incremental-static-regeneration-isr)  
+10. [What is SSG](#q10-what-is-ssg)  
+11. [What are getStaticProps and getServerSideProps?](#q11-what-are-getstaticprops-and-getserversideprops)  
+12. [When to use getStaticProps vs getServerSideProps](#q12-when-to-use-getstaticprops-vs-getserversideprops-and-vice-verca)  
+13. [What is getStaticPaths?](#q13-what-is-getstaticpaths)  
+
+14. [How to fetch data in Next.js?](#q14-how-to-fetch-data-in-nextjs)  
 
 #### 🧭 Routing & Navigation
-15. [What is the Link component in Next.js?](#q15-what-is-the-link-component-in-nextjs) *(Document2)*
-16. [What is the useRouter hook in Next.js?](#q16-what-is-the-userouter-hook-in-nextjs) *(Document2)*
-17. [Programmatic Navigation in Next.js](#q17-programmatic-navigation-in-nextjs) *(Document1)*
-18. [What is Dynamic Routing in Next.js?](#q18-what-is-dynamic-routing-in-nextjs) *(Document1)*
-19. [What are redirects and rewrites in Next.js?](#q19-what-are-redirects-and-rewrites-in-nextjs) *(Document1)*
-20. [What is Prefetching in Next.js?](#q20-what-is-prefetching-in-nextjs) *(Document1)*
+15. [What is the Link component in Next.js?](#q15-what-is-the-link-component-in-nextjs)  
+16. [What is the useRouter hook in Next.js?](#q16-what-is-the-userouter-hook-in-nextjs)  
+19. [What are redirects and rewrites in Next.js?](#q19-what-are-redirects-and-rewrites-in-nextjs)  
+20. [What is Prefetching in Next.js?](#q20-what-is-prefetching-in-nextjs)  
 
 #### 🎨 Styling & Components
-21. [What is Styled JSX in Next.js?](#q21-what-is-styled-jsx-in-nextjs) *(Document1)*
-22. [How do you use CSS Modules or Tailwind in Next.js?](#q22-how-do-you-use-css-modules-or-tailwind-in-nextjs) *(Document2)*
-23. [What is the Image Component and Image Optimization in Next.js?](#q23-what-is-the-image-component-and-image-optimization-in-nextjs) *(Document1)*
-24. [How to add global and component-level CSS in Next.js?](#q24-how-to-add-global-and-component-level-css-in-nextjs) *(Document2)*
+21. [What is Styled JSX in Next.js?](#q21-what-is-styled-jsx-in-nextjs)  
+22. [How do you use CSS Modules or Tailwind in Next.js?](#q22-how-do-you-use-css-modules-or-tailwind-in-nextjs)  
+23. [What is the Image Component and Image Optimization in Next.js?](#q23-what-is-the-image-component-and-image-optimization-in-nextjs)  
 
 #### ⚙️ Configuration & Environment
-25. [What is next.config.js and what does it do?](#q25-what-is-nextconfigjs-and-what-does-it-do) *(Document2)*
-26. [What is the purpose of publicRuntimeConfig and serverRuntimeConfig?](#q26-what-is-the-purpose-of-publicruntimeconfig-and-serverruntimeconfig) *(Document1)*
-27. [What are Environment Variables in Next.js?](#q27-what-are-environment-variables-in-nextjs) *(Document1)*
-28. [How do you add custom headers in Next.js?](#q28-how-do-you-add-custom-headers-in-nextjs) *(Document2)*
-29. [What is the experimental property in next.config.js?](#q29-what-is-the-experimental-property-in-nextconfigjs) *(Document1)*
+25. [What is next.config.js and what does it do?](#q25-what-is-nextconfigjs-and-what-does-it-do)  
+26. [What is the purpose of publicRuntimeConfig and serverRuntimeConfig?](#q26-what-is-the-purpose-of-publicruntimeconfig-and-serverruntimeconfig)  
+27. [What are Environment Variables in Next.js?](#q27-what-are-environment-variables-in-nextjs)  
+28. [How do you add custom headers in Next.js?](#q28-how-do-you-add-custom-headers-in-nextjs)  
 
 #### 🚀 Deployment & Optimization
-30. [How do you deploy a Next.js application?](#q30-how-do-you-deploy-a-nextjs-application) *(Document1)*
-31. [What is Serverless Deployment in Next.js?](#q31-what-is-serverless-deployment-in-nextjs) *(Document1)*
+30. [How do you deploy a Next.js application?](#q30-how-do-you-deploy-a-nextjs-application)  
+31. [What is Serverless Deployment in Next.js?](#q31-what-is-serverless-deployment-in-nextjs)  
 
 
 #### 🧠 Advanced Concepts
-32. [How can you optimize performance in Next.js?](#q32-how-can-you-optimize-performance-in-nextjs) *(Document1)*
-33. [What is Middleware in Next.js?](#q33-what-is-middleware-in-nextjs) *(Document2)*
-34. [What is App Router vs Pages Router?](#q34-what-is-app-router-vs-pages-router) *(Document2)*
-35. [What are Layouts and Templates in App Router?](#q35-what-are-layouts-and-templates-in-app-router) *(Document1)*
-36. [What is the use of the _app.js and _document.js files?](#q36-what-is-the-use-of-the-_appjs-and-_documentjs-files) *(Document2)*
-37. [How do you implement authentication in Next.js?](#q37-how-do-you-implement-authentication-in-nextjs) *(Document1)*
-38. [What are React Server Components (RSC) in Next.js?](#q38-what-are-react-server-components-rsc-in-nextjs) *(Document2)*
+32. [How can you optimize performance in Next.js?](#q32-how-can-you-optimize-performance-in-nextjs)  
+33. [What is Middleware in Next.js?](#q33-what-is-middleware-in-nextjs)  
+34. [What is App Router vs Pages Router?](#q34-what-is-app-router-vs-pages-router)  
+35. [What are Layouts and Templates in App Router?](#q35-what-are-layouts-and-templates-in-app-router)  
+36. [What is the use of the _app.js and _document.js files?](#q36-what-is-the-use-of-the-_appjs-and-_documentjs-files)  
+37. [How do you implement authentication in Next.js?](#q37-how-do-you-implement-authentication-in-nextjs)  
+38. [What are React Server Components (RSC) in Next.js?](#q38-what-are-react-server-components-rsc-in-nextjs)  
 
 #### 🧩 Error Handling & Debugging
-39. [What are _error.js and 404.js used for?](#q39-what-are-_errorjs-and-404js-used-for) *(Document1)*
-40. [How do you implement custom error boundaries?](#q40-how-do-you-implement-custom-error-boundaries) *(Document1)*
-41. [Best practices for debugging and testing Next.js apps](#q41-best-practices-for-debugging-and-testing-nextjs-apps) *(Document1)*
+39. [What are _error.js and 404.js used for?](#q39-what-are-_errorjs-and-404js-used-for)  
+40. [How do you implement custom error boundaries?](#q40-how-do-you-implement-custom-error-boundaries)  
+41. [Best practices for debugging and testing Next.js apps](#q41-best-practices-for-debugging-and-testing-nextjs-apps)  
 
 ---
 
@@ -82,9 +79,9 @@ It’s designed for developers who want to transition smoothly into **Next.js** 
 ---
 
 ## Part 2: Quick Reference Questions
-- [What is File-Based Routing?](#q5-file-based-routing-in-nextjs)
-- [What is getStaticPaths used for?](#q13-getstaticpaths)
-- [What is ISR and why is it useful?](#q9-isr)
+- [What is File-Based Routing?](#q5-what-is-file-based-routing-in-nextjs)
+- [What is getStaticPaths used for?](#q13-what-is-getstaticpaths))
+- [What is ISR and why is it useful?](#q9-what-is-incremental-static-regeneration-isr)
 - [How do you add meta tags using the Head component?](#q23-what-is-the-image-component-and-image-optimization-in-nextjs)
 - [What is the difference between Layouts and Templates?](#q35-what-are-layouts-and-templates-in-app-router)
 - [What are Redirects vs Rewrites?](#q19-what-are-redirects-and-rewrites-in-nextjs)
@@ -95,7 +92,6 @@ It’s designed for developers who want to transition smoothly into **Next.js** 
 - [What is Middleware used for?](#q33-what-is-middleware-in-nextjs)
 - [What are React Server Components (RSC)?](#q38-what-are-react-server-components-rsc-in-nextjs)
 - [How do you handle authentication in Next.js?](#q37-how-do-you-implement-authentication-in-nextjs)
-- [What is Incremental Static Regeneration (ISR)?](#q9-isr)
 
 ---
 
@@ -156,6 +152,8 @@ Generate HTML   │
 ```
 
 ---
+
+
 
 ### Q3: Key features of Next.js
 1. Server-Side Rendering (SSR) –
@@ -225,7 +223,7 @@ File-based routing allows developers to create pages just by adding files — Ne
 
 ---
 
-### Q6: What is the difference between client-side and server-side rendering?
+### Q6: What is the difference between Client-Side and Server-Side Rendering?
 | **Aspect**                           | **Client-Side Rendering (CSR)**                                        | **Server-Side Rendering (SSR)**                                    |
 | ------------------------------------ | ---------------------------------------------------------------------- | ------------------------------------------------------------------ |
 | **Where rendering happens**          | In the **browser (client)**                                            | On the **server** before sending to the browser                    |
@@ -541,19 +539,6 @@ const Home = () => {
 };
 
 ```
-
----
-
-### Q17: Programmatic Navigation in Next.js -- (DELETE QUESTION)
-Use `router.push('/page')` or `router.replace('/page')` for navigation.  
-**Source:** Document1  
-
----
-
-### Q18: What is Dynamic Routing in Next.js? - (DELETE QUESTION)
-
-
-
 
 ---
 
