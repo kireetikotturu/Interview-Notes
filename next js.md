@@ -34,44 +34,43 @@ It’s designed for developers who want to transition smoothly into **Next.js** 
 11. [What are getStaticProps and getServerSideProps?](#q11-what-are-getstaticprops-and-getserversideprops)  
 12. [When to use getStaticProps vs getServerSideProps](#q12-when-to-use-getstaticprops-vs-getserversideprops-and-vice-verca)  
 13. [What is getStaticPaths?](#q13-what-is-getstaticpaths)  
-
 14. [How to fetch data in Next.js?](#q14-how-to-fetch-data-in-nextjs)  
 
 #### 🧭 Routing & Navigation
 15. [What is the Link component in Next.js?](#q15-what-is-the-link-component-in-nextjs)  
 16. [What is the useRouter hook in Next.js?](#q16-what-is-the-userouter-hook-in-nextjs)  
-19. [What are redirects and rewrites in Next.js?](#q19-what-are-redirects-and-rewrites-in-nextjs)  
-20. [What is Prefetching in Next.js?](#q20-what-is-prefetching-in-nextjs)  
+17. [What are redirects and rewrites in Next.js?](#q17-what-are-redirects-and-rewrites-in-nextjs)  
+18. [What is Prefetching in Next.js?](#q18-what-is-prefetching-in-nextjs)  
 
 #### 🎨 Styling & Components
-21. [What is Styled JSX in Next.js?](#q21-what-is-styled-jsx-in-nextjs)  
-22. [How do you use CSS Modules or Tailwind in Next.js?](#q22-how-do-you-use-css-modules-or-tailwind-in-nextjs)  
-23. [What is the Image Component and Image Optimization in Next.js?](#q23-what-is-the-image-component-and-image-optimization-in-nextjs)  
+19. [What is Styled JSX in Next.js?](#q19-what-is-styled-jsx-in-nextjs)  
+20. [How do you use CSS Modules or Tailwind in Next.js?](#q20-how-do-you-use-css-modules-or-tailwind-in-nextjs)  
+21. [What is the Image Component and Image Optimization in Next.js?](#q21-what-is-the-image-component-and-image-optimization-in-nextjs)  
 
 #### ⚙️ Configuration & Environment
-25. [What is next.config.js and what does it do?](#q25-what-is-nextconfigjs-and-what-does-it-do)  
-26. [What is the purpose of publicRuntimeConfig and serverRuntimeConfig?](#q26-what-is-the-purpose-of-publicruntimeconfig-and-serverruntimeconfig)  
-27. [What are Environment Variables in Next.js?](#q27-what-are-environment-variables-in-nextjs)  
-28. [How do you add custom headers in Next.js?](#q28-how-do-you-add-custom-headers-in-nextjs)  
+22. [What is next.config.js and what does it do?](#q25-what-is-nextconfigjs-and-what-does-it-do)  
+23. [What is the purpose of publicRuntimeConfig and serverRuntimeConfig?](#q23-what-is-the-purpose-of-publicruntimeconfig-and-serverruntimeconfig)  
+24. [What are Environment Variables in Next.js?](#q24-what-are-environment-variables-in-nextjs)  
+25. [How do you add custom headers in Next.js?](#q25-how-do-you-add-custom-headers-in-nextjs)  
 
 #### 🚀 Deployment & Optimization
-30. [How do you deploy a Next.js application?](#q30-how-do-you-deploy-a-nextjs-application)  
-31. [What is Serverless Deployment in Next.js?](#q31-what-is-serverless-deployment-in-nextjs)  
+26. [How do you deploy a Next.js application?](#q26-how-do-you-deploy-a-nextjs-application)  
+27. [What is Serverless Deployment in Next.js?](#q27-what-is-serverless-deployment-in-nextjs)  
 
 
 #### 🧠 Advanced Concepts
-32. [How can you optimize performance in Next.js?](#q32-how-can-you-optimize-performance-in-nextjs)  
-33. [What is Middleware in Next.js?](#q33-what-is-middleware-in-nextjs)  
-34. [What is App Router vs Pages Router?](#q34-what-is-app-router-vs-pages-router)  
-35. [What are Layouts and Templates in App Router?](#q35-what-are-layouts-and-templates-in-app-router)  
-36. [What is the use of the _app.js and _document.js files?](#q36-what-is-the-use-of-the-_appjs-and-_documentjs-files)  
-37. [How do you implement authentication in Next.js?](#q37-how-do-you-implement-authentication-in-nextjs)  
-38. [What are React Server Components (RSC) in Next.js?](#q38-what-are-react-server-components-rsc-in-nextjs)  
+28. [How can you optimize performance in Next.js?](#q28-how-can-you-optimize-performance-in-nextjs)  
+29. [What is Middleware in Next.js?](#q29-what-is-middleware-in-nextjs)  
+30. [What is App Router vs Pages Router?](#q30-what-is-app-router-vs-pages-router)  
+31. [What are Layouts and Templates in App Router?](#q31-what-are-layouts-and-templates-in-app-router)  
+32. [What is the use of the _app.js and _document.js files?](#q32-what-is-the-use-of-the-_appjs-and-_documentjs-files)  
+33. [How do you implement authentication in Next.js?](#q33-how-do-you-implement-authentication-in-nextjs)  
+34. [What are React Server Components (RSC) in Next.js?](#q34-what-are-react-server-components-rsc-in-nextjs)  
 
 #### 🧩 Error Handling & Debugging
-39. [What are _error.js and 404.js used for?](#q39-what-are-_errorjs-and-404js-used-for)  
-40. [How do you implement custom error boundaries?](#q40-how-do-you-implement-custom-error-boundaries)  
-41. [Best practices for debugging and testing Next.js apps](#q41-best-practices-for-debugging-and-testing-nextjs-apps)  
+35. [What are _error.js and 404.js used for?](#q35-what-are-_errorjs-and-404js-used-for)  
+36. [How do you implement custom error boundaries?](#q36-how-do-you-implement-custom-error-boundaries)  
+37. [Best practices for debugging and testing Next.js apps](#q37-best-practices-for-debugging-and-testing-nextjs-apps)  
 
 ---
 
@@ -82,16 +81,16 @@ It’s designed for developers who want to transition smoothly into **Next.js** 
 - [What is File-Based Routing?](#q5-what-is-file-based-routing-in-nextjs)
 - [What is getStaticPaths used for?](#q13-what-is-getstaticpaths))
 - [What is ISR and why is it useful?](#q9-what-is-incremental-static-regeneration-isr)
-- [How do you add meta tags using the Head component?](#q23-what-is-the-image-component-and-image-optimization-in-nextjs)
-- [What is the difference between Layouts and Templates?](#q35-what-are-layouts-and-templates-in-app-router)
-- [What are Redirects vs Rewrites?](#q19-what-are-redirects-and-rewrites-in-nextjs)
-- [What is Prefetching and how does it improve performance?](#q20-what-is-prefetching-in-nextjs)
-- [What is Serverless Architecture in Next.js?](#q31-what-is-serverless-deployment-in-nextjs)
-- [What are publicRuntimeConfig and serverRuntimeConfig?](#q26-what-is-the-purpose-of-publicruntimeconfig-and-serverruntimeconfig)
-- [What is the difference between App Router and Pages Router?](#q34-what-is-app-router-vs-pages-router)
-- [What is Middleware used for?](#q33-what-is-middleware-in-nextjs)
-- [What are React Server Components (RSC)?](#q38-what-are-react-server-components-rsc-in-nextjs)
-- [How do you handle authentication in Next.js?](#q37-how-do-you-implement-authentication-in-nextjs)
+- [How do you add meta tags using the Head component?](#q21-what-is-the-image-component-and-image-optimization-in-nextjs)
+- [What is the difference between Layouts and Templates?](#q31-what-are-layouts-and-templates-in-app-router)
+- [What are Redirects vs Rewrites?](#q17-what-are-redirects-and-rewrites-in-nextjs)
+- [What is Prefetching and how does it improve performance?](#q18-what-is-prefetching-in-nextjs)
+- [What is Serverless Architecture in Next.js?](#q27-what-is-serverless-deployment-in-nextjs)
+- [What are publicRuntimeConfig and serverRuntimeConfig?](#q23-what-is-the-purpose-of-publicruntimeconfig-and-serverruntimeconfig)
+- [What is the difference between App Router and Pages Router?](#q30-what-is-app-router-vs-pages-router)
+- [What is Middleware used for?](#q29-what-is-middleware-in-nextjs)
+- [What are React Server Components (RSC)?](#q34-what-are-react-server-components-rsc-in-nextjs)
+- [How do you handle authentication in Next.js?](#q33-how-do-you-implement-authentication-in-nextjs)
 
 ---
 
@@ -542,7 +541,7 @@ const Home = () => {
 
 ---
 
-### Q19: What are redirects and rewrites in Next.js?
+### Q17: What are redirects and rewrites in Next.js?
 Redirects and rewrites in Next.js are used to control how URLs behave, but they function differently.
 
 Redirects: Change the URL in the browser. They are used for permanent (301) or temporary (302) moves.
@@ -587,7 +586,7 @@ In this example, When a user visits /about, the browser still shows /about, but 
 
 ---
 
-### Q20: What is Prefetching in Next.js?
+### Q18: What is Prefetching in Next.js?
 Prefetching in Next.js means loading the next page’s files (JavaScript and assets) in advance, before the user actually clicks the link.
 This makes navigation faster and smoother.
 
@@ -607,7 +606,7 @@ This helps reduce page load time and gives a better user experience, especially 
 
 ## 🎨 Styling & Components
 
-### Q21: What is Styled JSX in Next.js?
+### Q19: What is Styled JSX in Next.js?
 Styled JSX is a built-in styling feature in Next.js that lets you write CSS directly inside a component, and the styles are automatically scoped only to that component.
 
 🌟 Key Points:
@@ -618,7 +617,7 @@ Styled JSX is a built-in styling feature in Next.js that lets you write CSS dire
 
 ---
 
-### Q22: How do you use CSS Modules or Tailwind in Next.js?
+### Q20: How do you use CSS Modules or Tailwind in Next.js?
 .
 🧩 1. Using CSS Modules & Global CSS in Next.js
 
@@ -729,7 +728,7 @@ Use Tailwind CSS for fast, responsive, and utility-based design.
 
 ---
 
-### Q23: What is the Image Component and Image Optimization in Next.js?
+### Q21: What is the Image Component and Image Optimization in Next.js?
 
 The Image Component (next/image) in Next.js is an improved version of the normal HTML <img> tag.
 It automatically optimizes images for faster loading and better performance.
@@ -818,7 +817,7 @@ next.config.js helps you control how Next.js behaves — including builds, image
 ---
 
 
-### Q26: What is the purpose of publicRuntimeConfig and serverRuntimeConfig?
+### Q23: What is the purpose of publicRuntimeConfig and serverRuntimeConfig?
 In Next.js, both publicRuntimeConfig and serverRuntimeConfig are used to store configuration values that you can access at runtime (when your app is running).
 They are defined inside next.config.js.
 
@@ -875,7 +874,7 @@ publicRuntimeConfig → for public values (accessible in browser).
 
 ---
 
-### Q27: What are Environment Variables in Next.js?
+### Q24: What are Environment Variables in Next.js?
 Environment variables in Next.js are used to store secret or configuration values (like API URLs or keys) outside of your code — so you can easily change them for different environments (development, production, etc.).
 
 Next.js has built-in support for handling them.
@@ -927,7 +926,7 @@ Use NEXT_PUBLIC_ for values needed in the browser.
 
 ---
 
-### Q28: How do you add custom headers in Next.js?
+### Q25: How do you add custom headers in Next.js?
 You can add custom headers by defining them inside next.config.js using the headers() function.
 
 Example : 
@@ -955,7 +954,7 @@ module.exports = nextConfig;
 
 ## 🚀 Deployment & Optimization
 
-### Q30: How do you deploy a Next.js application?
+### Q26: How do you deploy a Next.js application?
 You can deploy Next.js in several ways depending on needs (SSR/SSG/static) — short summary with quick commands/examples:
 
 Vercel (recommended) — Native platform for Next.js with zero-config SSR, SSG, API routes, and automatic optimizations.
@@ -989,7 +988,7 @@ In short: use Vercel for easiest/optimal Next.js hosting; choose static export, 
 
 ---
 
-### Q31: What is Serverless Deployment in Next.js?
+### Q27: What is Serverless Deployment in Next.js?
 Serverless deployment means running your Next.js app without managing servers.
 Instead of keeping a server running all the time, your app runs as small, on-demand functions (called serverless functions) that execute only when needed.
 Platforms like Vercel, Netlify, or AWS Lambda handle this automatically.
@@ -1025,7 +1024,7 @@ Serverless deployment lets Next.js apps run as auto-scaling, pay-per-use functio
 
 ---
 
-### Q32: How can you optimize performance in Next.js?
+### Q28: How can you optimize performance in Next.js?
 Optimizing the performance of a Next.js application involves various strategies such as:
 
 1. Code Splitting & Dynamic Imports : Load only the code needed for the current page.
@@ -1038,7 +1037,7 @@ Optimizing the performance of a Next.js application involves various strategies 
 
 ---
 
-### Q33: What is Middleware in Next.js?
+### Q29: What is Middleware in Next.js?
 Middleware in Next.js lets you run code before a request is processed.
 It allows you to redirect, rewrite, or check authentication before serving a page — giving you more control over how requests are handled.
 
@@ -1077,7 +1076,7 @@ It runs before the page loads — ensuring secure and fast route control.
 
 
 
-### Q34: What is App Router vs Pages Router?
+### Q30: What is App Router vs Pages Router?
 Next.js has two types of routing systems — the Pages Router (older) and the App Router (newer).
 Both handle navigation and page rendering, but the App Router is the modern approach introduced in Next.js 13.
 
@@ -1140,7 +1139,7 @@ app/
 
 ---
 
-### Q35: What are Layouts and Templates in App Router?
+### Q31: What are Layouts and Templates in App Router?
 In the Next.js App Router, both Layouts and Templates help you structure your pages but they behave differently when navigating between routes.
 
 🧩 Layouts
@@ -1180,7 +1179,7 @@ and Templates when you want the page to re-render fresh every time it loads.
 
 ---
 
-### Q36: What is the use of the _app.js and _document.js files?
+### Q32: What is the use of the _app.js and _document.js files?
 These two files, _app.js and _document.js, are special files in Next.js that control how your app is initialized and rendered.
 
 🧩 _app.js — Custom App Component
@@ -1258,7 +1257,7 @@ export default function MyDocument() {
 
 ---
 
-### Q37: How do you implement authentication in Next.js?
+### Q33: How do you implement authentication in Next.js?
 Next.js doesn’t include built-in auth. Common approaches:
 
 1. JWT (custom)
@@ -1291,7 +1290,7 @@ Use HTTPS and CSRF protections for cookie-based auth.
 
 ---
 
-### Q38: What are React Server Components (RSC) in Next.js?
+### Q34: What are React Server Components (RSC) in Next.js?
 React Server Components (RSC) are a new React feature that allow components to be rendered on the server instead of the client.
 In Next.js (App Router), all components are Server Components by default.
 
@@ -1361,7 +1360,7 @@ In short:
 
 ## 🧩 Error Handling & Debugging
 
-### Q39: What are _error.js and 404.js used for?
+### Q35: What are _error.js and 404.js used for?
 Next.js provides special pages for handling errors and missing routes in your app.
 
 .
@@ -1421,7 +1420,7 @@ Custom 404 designs (illustrations, redirect links, etc.)
 
 ---
 
-### Q40: How do you implement custom error boundaries?
+### Q36: How do you implement custom error boundaries?
 
 🧩 Custom Error Boundaries in Next.js
 Error boundaries help you gracefully handle runtime errors in React components — preventing the entire app from crashing and showing a user-friendly fallback instead.
@@ -1528,7 +1527,7 @@ In short:
 
 ---
 
-### Q41: Best practices for debugging and testing Next.js apps
+### Q37: Best practices for debugging and testing Next.js apps
 Debugging and testing help keep your Next.js app reliable and bug-free. Here are some simple best practices:
 
 1. Use browser developer tools to inspect the UI, check network requests, and monitor performance.
