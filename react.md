@@ -83,3 +83,5 @@
 19. A dropdown must close when clicking outside — how to implement click outside detection? ***
 20. A modal must render above everything — how to implement with portals? ***
 
+### Task
+1. Create a dashboard/table after fetching data from api, should be capable of CRUD operations and search filter. ***
