@@ -46,6 +46,7 @@
 40. How does React handle events differently from browser DOM **
 41. What is state lifting **
 42. What is the difference between default export and named export in React **
+43. Create a component rendering data with pagination. ***
 
 ---
 
